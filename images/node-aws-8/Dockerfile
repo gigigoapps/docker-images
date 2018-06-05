@@ -1,7 +1,7 @@
 FROM circleci/node:8
 
-RUN sudo apt-get install awscli
-RUN sudo apt-get install python-setuptools
-RUN sudo easy_install pip
-RUN sudo apt-get install python-dev        
-RUN sudo pip install --upgrade awscli
+RUN apt-get install awscli \
+    apt-get install python-setuptools \
+    easy_install pip \
+    apt-get install python-dev \  
+    pip install --upgrade awscli
