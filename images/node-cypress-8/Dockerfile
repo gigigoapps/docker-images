@@ -17,3 +17,5 @@ RUN sudo apt-get update && \
   g++ 
 
 RUN yarn global add cypress@3.0.1
+ENV PATH="/home/circleci/.yarn/bin:${PATH}"
+RUN cypress verify
