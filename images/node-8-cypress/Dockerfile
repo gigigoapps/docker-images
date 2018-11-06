@@ -18,4 +18,4 @@ RUN sudo apt-get update && \
   build-essential \
   g++
 
-RUN yarn global add cypress@3.1.0 && cypress verify
+RUN yarn global add cypress@3.1.1 && cypress verify
