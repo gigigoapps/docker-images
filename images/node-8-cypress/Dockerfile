@@ -1,5 +1,7 @@
 FROM circleci/node:8
 
+ARG CYPRESS_VERSION
+
 ENV PATH="/home/circleci/.yarn/bin:${PATH}"
 
 RUN sudo apt-get update && \
@@ -11,11 +13,11 @@ RUN sudo apt-get update && \
   libxss1 \
   libasound2 \
   xvfb \
-  libcairo2-dev \
-  libjpeg-dev \
-  libpango1.0-dev \
-  libgif-dev \
-  build-essential \
-  g++
+  build-essential\
+  libcairo2-dev\
+  libpango1.0-dev\
+  libjpeg-dev\
+  libgif-dev\
+  librsvg2-dev
 
-RUN yarn global add cypress@3.1.3 && cypress verify
+RUN yarn global add cypress@${CYPRESS_VERSION} && cypress verify
