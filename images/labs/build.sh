@@ -6,5 +6,5 @@ TAG=latest
 echo "Building $NAME"
 docker build -t ${NAME}:${TAG} .
 
-# docker run -it ${NAME}:${TAG} bash
+# docker run --rm -it ${NAME}:${TAG} bash
 docker push ${NAME}:${TAG}

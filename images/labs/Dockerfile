@@ -10,6 +10,10 @@ RUN echo "deb http://packages.cloud.google.com/apt cloud-sdk-stretch main" | sud
 # aws-cli
 RUN sudo pip install --upgrade awscli
 
+# doctl
+RUN cd ~; curl -sL https://github.com/digitalocean/doctl/releases/download/v1.38.0/doctl-1.38.0-linux-amd64.tar.gz | tar -xzv && \
+sudo mv ~/doctl /usr/local/bin
+
 #helm
 RUN curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 
