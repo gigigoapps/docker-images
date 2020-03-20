@@ -14,8 +14,11 @@ RUN sudo pip install --upgrade awscli
 RUN cd ~; curl -sL https://github.com/digitalocean/doctl/releases/download/v1.38.0/doctl-1.38.0-linux-amd64.tar.gz | tar -xzv && \
 sudo mv ~/doctl /usr/local/bin
 
-#helm
+# helm
 RUN curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+
+# helm-s3
+RUN helm plugin install https://github.com/hypnoglow/helm-s3.git --version 0.9.2
 
 # yq
 RUN cd ~; curl -L -o yq  https://github.com/mikefarah/yq/releases/download/3.1.1/yq_linux_amd64; \
